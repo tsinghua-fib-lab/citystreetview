@@ -8,8 +8,13 @@ enabled = true
 
 [project]
 name = "citystreetview"
+authors = [
+    {name = "Jun Zhang", email = "zhangjun990222@gmail.com"},
+]
 description = "城市街景爬取工具（百度、Google）"
+keywords = ["city", "street view"]
 readme = "README.md"
+license = {file = "LICENSE"}
 dynamic = ["version"]
 requires-python = ">=3.8"
 dependencies = [
@@ -23,6 +28,11 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
+
+[project.urls]
+Homepage = "https://github.com/tsinghua-fib-lab/citystreetview"
+Repository = "https://github.com/tsinghua-fib-lab/citystreetview.git"
+Issues = "https://github.com/tsinghua-fib-lab/citystreetview/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
