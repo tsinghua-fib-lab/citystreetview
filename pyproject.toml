@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=41", "wheel", "setuptools-git-versioning<2"]
+build-backend = "setuptools.build_meta"
+
+# https://setuptools-git-versioning.readthedocs.io/en/stable/install.html
+[tool.setuptools-git-versioning]
+enabled = true
+
+[project]
+name = "citystreetview"
+description = "城市街景爬取工具（百度、Google）"
+readme = "README.md"
+dynamic = ["version"]
+requires-python = ">=3.8"
+dependencies = [
+    'importlib-metadata; python_version<"3.8"',
+    "numpy >= 1.24.0",
+    "opencv-python >= 4.8.0.74",
+    "Pillow >= 10.0.0",
+    "requests >= 2.27.0",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["citystreetview*"]
