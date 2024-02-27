@@ -6,8 +6,6 @@ from typing import Dict
 import requests
 from PIL import Image
 
-from .constant import _SERVER_ID as SERVER_ID
-
 __all__ = ["BaiduStreetView"]
 
 
@@ -96,7 +94,7 @@ class BaiduStreetView:
         return sv
 
     def _query_camera(self):
-        url = f"https://mapsv{SERVER_ID}.bdimg.com/?qt=sdata&sid={self.sid}"
+        url = f"https://mapsv0.bdimg.com/?qt=sdata&sid={self.sid}"
         resp = requests.get(url)
         result = resp.json()
         if result["result"]["error"] != 0 or len(result["content"]) != 1:
