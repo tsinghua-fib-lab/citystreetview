@@ -64,7 +64,7 @@ class BaiduStreetView:
         Returns:
         - sv: 街景图片。Street view image.
         """
-        url = f"https://mapsv{SERVER_ID}.bdimg.com/?qt=qsdata&x={x}&y={y}"
+        url = f"https://mapsv0.bdimg.com/?qt=qsdata&x={x}&y={y}"
         resp = requests.get(url)
         result = resp.json()
         # 正确响应格式：{'content': {'RoadId': 'c68cdd-64ba-7b9a-549d-82eac9', 'RoadName': '锡拉胡同', 'id': '09002200121707120825100452M', 'x': 1295957900, 'y': 482703000}, 'result': {'action': 0, 'error': 0}}
@@ -117,7 +117,7 @@ class BaiduStreetView:
         with requests.Session() as s:
             for x in range(xrange):
                 for y in range(yrange):
-                    url = f"https://mapsv{SERVER_ID}.bdimg.com/?qt=pdata&sid={self.sid}&pos={x}_{y}&z={self._zoom}&from=PC"
+                    url = f"https://mapsv0.bdimg.com/?qt=pdata&sid={self.sid}&pos={x}_{y}&z={self._zoom}&from=PC"
                     with s.get(url) as resp:
                         b = resp.content
                         img = Image.open(BytesIO(b))
